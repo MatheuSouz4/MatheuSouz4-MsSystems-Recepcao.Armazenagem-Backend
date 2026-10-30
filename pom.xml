@@ -11,21 +11,8 @@
 	<groupId>br.com.mssystems</groupId>
 	<artifactId>mssystems-backend</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name/>
-	<description/>
-	<url/>
-	<licenses>
-		<license/>
-	</licenses>
-	<developers>
-		<developer/>
-	</developers>
-	<scm>
-		<connection/>
-		<developerConnection/>
-		<tag/>
-		<url/>
-	</scm>
+	<name>MsSystems Backend</name>
+	<description>Sistema de Controle de Recepção e Armazenagem de Matérias-Primas</description>
 	<properties>
 		<java.version>21</java.version>
 	</properties>
