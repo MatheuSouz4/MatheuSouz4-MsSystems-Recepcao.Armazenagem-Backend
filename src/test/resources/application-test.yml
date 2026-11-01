@@ -1,0 +1,6 @@
+# Valores de apoio: a conexao real vem do Testcontainers (@ServiceConnection).
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/placeholder
+    username: test
+    password: test

@@ -4,7 +4,7 @@ spring:
   profiles:
     default: dev
   datasource:
-    url: ${DB_URL:jdbc:postgresql://localhost:5433/mssystems_recepcao_armazenagem}
+    url: ${DB_URL:jdbc:postgresql://localhost:${DB_PORT:5433}/${DB_NAME:mssystems_recepcao_armazenagem}}
     username: ${DB_USER:mssystems}
     password: ${DB_PASSWORD}
   jpa:

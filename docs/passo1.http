@@ -1,0 +1,65 @@
+### Requisições do Passo 1 (IntelliJ HTTP Client / também servem de modelo para Postman)
+@host = http://localhost:8080
+@auth = Basic dev dev-local-only
+
+### Health (público)
+GET {{host}}/actuator/health
+
+### 1) Criar fornecedor
+POST {{host}}/api/fornecedores
+Authorization: {{auth}}
+Content-Type: application/json
+
+{
+  "razaoSocial": "Agro Sul Ltda",
+  "nomeFantasia": "Agro Sul",
+  "cnpj": "11.222.333/0001-81",
+  "email": "contato@agrosul.com.br",
+  "telefone": "62999990000"
+}
+
+### 2) Listar fornecedores
+GET {{host}}/api/fornecedores
+Authorization: {{auth}}
+
+### 3) Criar matéria-prima (use o id do fornecedor criado)
+POST {{host}}/api/materias-primas
+Authorization: {{auth}}
+Content-Type: application/json
+
+{
+  "nome": "Farelo de Soja",
+  "descricao": "Farelo de soja 46% proteína",
+  "categoria": "ORIGEM_VEGETAL_OV",
+  "fornecedorId": 1
+}
+
+### 4) Listar matérias-primas
+GET {{host}}/api/materias-primas
+Authorization: {{auth}}
+
+### 5) Criar local de armazenagem
+POST {{host}}/api/locais-armazenagem
+Authorization: {{auth}}
+Content-Type: application/json
+
+{
+  "tipo": "SILO",
+  "rua": "A",
+  "posicao": "01",
+  "capacidadeMaxima": 50000.000
+}
+
+### 6) Listar locais
+GET {{host}}/api/locais-armazenagem
+Authorization: {{auth}}
+
+### 7) Erro esperado: CNPJ inválido (400)
+POST {{host}}/api/fornecedores
+Authorization: {{auth}}
+Content-Type: application/json
+
+{
+  "razaoSocial": "Teste",
+  "cnpj": "11.111.111/1111-11"
+}

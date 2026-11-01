@@ -1,0 +1,10 @@
+# Perfil de desenvolvimento local.
+# Credencial descartavel, apenas para testar a API enquanto os perfis reais
+# (Portaria, Qualidade, Operador de Empilhador) nao sao implementados.
+spring:
+  security:
+    user:
+      name: dev
+      password: dev-local-only
+  jpa:
+    show-sql: true
